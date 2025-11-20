@@ -31,7 +31,7 @@ namespace SportsStore.Tests
 
             //ACT
            ProductListViewModel result =
-                controller.Index(2)?.ViewData.Model as ProductListViewModel
+                controller.Index(null, 2)?.ViewData.Model as ProductListViewModel
                 ?? new();                
 
             // Assert
@@ -58,14 +58,11 @@ namespace SportsStore.Tests
 
             //ACT
              ProductListViewModel result =
-                controller.Index()?.ViewData.Model as ProductListViewModel
+                controller.Index(null)?.ViewData.Model as ProductListViewModel
                 ?? new();                     
 
             // Assert
-            Product[] prodArray = result.Products.ToArray()
-                ?? Array.Empty<Product>();
-
-                                GetViewModel<IEnumerable<Product>>(controller.Index())?.ToArray();
+            Product[] prodArray = result.Products.ToArray();               
             Assert.True(prodArray.Length == 2);
             Assert.Equal("P1", prodArray[0].Name);
             Assert.Equal("P2", prodArray[1].Name);
@@ -92,7 +89,7 @@ namespace SportsStore.Tests
 
             // Act
              ProductListViewModel result =
-                controller.Index(2)?.ViewData.Model as ProductListViewModel
+                controller.Index(null, 2)?.ViewData.Model as ProductListViewModel
                 ?? new();          
                 
             // Assert
