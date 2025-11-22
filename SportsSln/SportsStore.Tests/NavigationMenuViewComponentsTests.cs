@@ -5,6 +5,7 @@ namespace SportsStoreTests
     using Microsoft.EntityFrameworkCore.Metadata.Internal;
     using Moq;
     using SportsStore.Components;
+    using SportsStore.Controllers;
     using SportsStore.Models;
     using System.Collections.Generic;
     using System.Linq;
@@ -70,5 +71,6 @@ namespace SportsStoreTests
             // Assert
             Assert.Equal(categoryToSelect, result);
         }
+       
     }
 }
