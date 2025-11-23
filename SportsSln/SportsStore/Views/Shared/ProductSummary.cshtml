@@ -10,7 +10,7 @@
     </div>
     <form id="@Model?.ProductID" asp-page="/Cart" method="post">
         <input type="hidden" asp-for="ProductID" />
-        <input type="hidden" name="returnUrl" value=" @ViewContext.HttpContext.Request.PathAndQuery()" />
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
         <span class="row card text p-1">
             @Model.Description 
             <button type="submit" class="col-3 btn btn-success btn-sm pull-right" style="float:right">

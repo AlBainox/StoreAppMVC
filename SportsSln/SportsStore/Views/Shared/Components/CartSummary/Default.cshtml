@@ -1,0 +1,21 @@
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@model Cart
+
+<div class"">
+    @if (Model?.Lines.Count() > 0)
+    {
+       <small class="navbar-text">
+        <b>Your cart:</b>
+        @Model.Lines.Sum(l => l.Quantity) item(s) -
+        @Model.ComputeTotalValue().ToString("c")
+       </small>
+    }
+    else
+    {
+        <a class="btn btn-secondary navbar-btn" asp-page="/Cart" 
+        asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
+      <i class="bi bi-cart3"></i>
+    
+        </a>
+    }
+</div>
