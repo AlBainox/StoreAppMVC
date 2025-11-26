@@ -13,6 +13,7 @@ builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 builder.Services.AddScoped<IOrderRepository, EFOrderRepository>();
 builder.Services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddServerSideBlazor();
 
 var app = builder.Build();
 
@@ -38,5 +39,7 @@ app.MapControllerRoute(
     defaults: new { Controller = "Home", action = "Index" });
 app.MapDefaultControllerRoute();
 app.MapRazorPages();
+app.MapBlazorHub();
+app.MapFallbackToPage("/admin/{*catchall}", "/Admin/Index");
 SeedData.EnsurePopulated(app);
 app.Run();

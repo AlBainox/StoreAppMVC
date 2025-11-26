@@ -32,5 +32,7 @@ namespace SportsStore.Models
         [EmailAddress(ErrorMessage = "The email address is not valid")]
         public string? Email { get; set; }
         public bool GiftWrap { get; set; }       
+        [BindNever]
+        public bool Shipped { get; set; }   
     }
 }
