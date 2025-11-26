@@ -1,17 +1,20 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace SportsStore.Models
 {
-	public class Product
-	{
-		public int ProductID { get; set; }
-		
-		public string? Name { get; set; }
-		
-		public string? Description { get; set; }
-	    [Column(TypeName = "decimal(18, 2)")]
-		public decimal Price { get; set; }
-		
-		public string? Category { get; set; }
-	}
+    public class Product
+    {
+        public int? ProductID { get; set; }
+        [Required(ErrorMessage = "Please enter a product name")]       
+        public string Name { get; set; } = String.Empty;
+        [Required(ErrorMessage = "Please enter a description")]      
+        public string Description { get; set; } = string.Empty;
+        [Required]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Please enter a positive price")]
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal Price { get; set; }
+        [Required(ErrorMessage = "Please enter a category")]
+        public string Category { get; set; } = string.Empty;
+    }
 }

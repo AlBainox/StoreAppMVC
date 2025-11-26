@@ -19,6 +19,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vQWRtaW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mac/StoreAppMVC/SportsSln/SportsStore/Pages/Admin/Details.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/StoreAppMVC/SportsSln/SportsStore/Pages/Admin/Editor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vRWRpdG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mac/StoreAppMVC/SportsSln/SportsStore/Pages/Admin/Orders.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vT3JkZXJzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

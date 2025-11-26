@@ -1,4 +1,62 @@
 @page "/admin/products"
 @page "/admin"
+@using Microsoft.EntityFrameworkCore.Migrations.Operations
+@inherits OwningComponentBase<IStoreRepository>
+<table class="table table-sm table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ProductData?.Count() > 0)
+        {
+            @foreach (var product in ProductData)
+            {
+                <tr>
+                    <td>@product.ProductID</td>
+                    <td>@product.Name</td>
+                    <td>@product.Category</td>
+                    <td>@product.Price.ToString("C")</td>
+                    <td>
+                        <NavLink class="btn btn-info btn-sm" href="@GetDetailsUrl(product.ProductID ?? 0)">Details</NavLink>
+                        <NavLink class="btn btn-warning btn-sm" href="@GetEditUrl(product.ProductID ?? 0)">Edit</NavLink>
+                        <button class="btn btn-danger btn-sm" @onclick="@(e => DeleteProduct(product))">Delete</button>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center">No products found.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<NavLink class="btn btn-primary" href="/admin/products/create">Create</NavLink>
 
-<h4>This is the products component</h4>
+@code {
+    public IStoreRepository Repository => Service;
+    private IEnumerable<Product>? ProductData { get; set; } = Enumerable.Empty<Product>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await UpdateData();
+    }
+    public async Task UpdateData()
+    {
+        ProductData = await Repository.Products.ToListAsync();
+    }
+    public async Task DeleteProduct(Product product)
+    {
+        Repository.DeleteProduct(product);
+        await UpdateData();
+    }
+    private string GetDetailsUrl(long productId) => $"/admin/products/details/{productId}";
+
+    private string GetEditUrl(long productId) => $"/admin/products/edit/{productId}";
+}
