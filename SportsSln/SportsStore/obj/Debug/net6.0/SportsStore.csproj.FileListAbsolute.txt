@@ -52,7 +52,8 @@
 /Users/mac/StoreAppMVC/SportsSln/SportsStore/obj/Debug/net6.0/scopedcss/bundle/SportsStore.styles.css
 /Users/mac/StoreAppMVC/SportsSln/SportsStore/obj/Debug/net6.0/SportsStore.csproj.CopyComplete
 /Users/mac/StoreAppMVC/SportsSln/SportsStore/obj/Debug/net6.0/SportsStore.dll
-/Users/mac/StoreAppMVC/SportsSln/SportsStore/obj/Debug/net6.0/refint/SportsStore.dll
 /Users/mac/StoreAppMVC/SportsSln/SportsStore/obj/Debug/net6.0/SportsStore.pdb
 /Users/mac/StoreAppMVC/SportsSln/SportsStore/obj/Debug/net6.0/SportsStore.genruntimeconfig.cache
 /Users/mac/StoreAppMVC/SportsSln/SportsStore/obj/Debug/net6.0/ref/SportsStore.dll
+/Users/mac/StoreAppMVC/SportsSln/SportsStore/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/mac/StoreAppMVC/SportsSln/SportsStore/obj/Debug/net6.0/refint/SportsStore.dll
